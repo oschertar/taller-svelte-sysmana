@@ -1,107 +1,42 @@
-# This repo is no longer maintained. Consider using `npm init vite` and selecting the `svelte` option or — if you want a full-fledged app framework and don't mind using pre-1.0 software — use [SvelteKit](https://kit.svelte.dev), the official application framework for Svelte.
+# Taller Svelte Sysmana 2023
 
 ---
 
-# svelte app
+# Instalación proyecto
 
-This is a project template for [Svelte](https://svelte.dev) apps. It lives at https://github.com/sveltejs/template.
-
-To create a new project based on this template using [degit](https://github.com/Rich-Harris/degit):
+Esta es la base de código que usaremos en la charla-taller sobre Svelte en la Sysmana 2023. Para configurar el proyecto correctamente, tienes que tener instalado `git` en tu ordenador y ejecutar los siguientes comandos.
 
 ```bash
-npx degit sveltejs/template svelte-app
-cd svelte-app
-```
-
-*Note that you will need to have [Node.js](https://nodejs.org) installed.*
-
-
-## Get started
-
-Install the dependencies...
-
-```bash
-cd svelte-app
+git clone https://github.com/oschertar/taller-svelte-sysmana.git
+cd taller-svelte-sysmana
 npm install
 ```
 
-...then start [Rollup](https://rollupjs.org):
+_Hay que tener [Node.js](https://nodejs.org) instalado previamente para que funcione correctamente._
 
-```bash
-npm run dev
-```
-
-Navigate to [localhost:8080](http://localhost:8080). You should see your app running. Edit a component file in `src`, save it, and reload the page to see your changes.
-
-By default, the server will only respond to requests from localhost. To allow connections from other computers, edit the `sirv` commands in package.json to include the option `--host 0.0.0.0`.
-
-If you're using [Visual Studio Code](https://code.visualstudio.com/) we recommend installing the official extension [Svelte for VS Code](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode). If you are using other editors you may need to install a plugin in order to get syntax highlighting and intellisense.
-
-## Building and running in production mode
-
-To create an optimised version of the app:
+Una vez hecho esto, ejecutar el siguiente comando y comprobar que no hay ningún error:
 
 ```bash
 npm run build
 ```
 
-You can run the newly built app with `npm run start`. This uses [sirv](https://github.com/lukeed/sirv), which is included in your package.json's `dependencies` so that the app will work when you deploy to platforms like [Heroku](https://heroku.com).
+Empezaremos el taller con esta base de código.
 
+## ¿Qué haremos en el taller?
 
-## Single-page app mode
+Modificaremos la web de un producto de uno de nuestros clientes: PCComponentes. Actualmente una página de producto sin descuento se muestra así:
 
-By default, sirv will only respond to requests that match files in `public`. This is to maximise compatibility with static fileservers, allowing you to deploy your app anywhere.
+![Base](img/base.png)
 
-If you're building a single-page app (SPA) with multiple routes, sirv needs to be able to respond to requests for *any* path. You can make it so by editing the `"start"` command in package.json:
+Nos han pedido que hagamos los siguientes cambios:
 
-```js
-"start": "sirv public --single"
-```
+Producto: [TCL 43C725 43"](https://www.pccomponentes.com/tcl-43c725-43-qled-ultrahd-4k-hdr10)
 
-## Using TypeScript
+1. Añadir la etiqueta "En Oferta" en la zona derecha y superior de la imagen del producto.
+2. Modificar el estilo del precio actual para que ahora sea el precio anterior (sin descuento). Deberá de estar tachado, de color gris y con un tamaño inferior al nuevo precio.
+3. Añadir el nuevo precio a su izquierda con un estilo similar al que ya tienen. Este nuevo precio será el precio actual con un descuento del 85%.
+4. Modificar la eficiencia energética de los productos para que muestren eficiencia energética F.
 
-This template comes with a script to set up a TypeScript development environment, you can run it immediately after cloning the template with:
+El producto deberá de mostrarse de la siguiente forma:
 
-```bash
-node scripts/setupTypeScript.js
-```
-
-Or remove the script via:
-
-```bash
-rm scripts/setupTypeScript.js
-```
-
-If you want to use `baseUrl` or `path` aliases within your `tsconfig`, you need to set up `@rollup/plugin-alias` to tell Rollup to resolve the aliases. For more info, see [this StackOverflow question](https://stackoverflow.com/questions/63427935/setup-tsconfig-path-in-svelte).
-
-## Deploying to the web
-
-### With [Vercel](https://vercel.com)
-
-Install `vercel` if you haven't already:
-
-```bash
-npm install -g vercel
-```
-
-Then, from within your project folder:
-
-```bash
-cd public
-vercel deploy --name my-project
-```
-
-### With [surge](https://surge.sh/)
-
-Install `surge` if you haven't already:
-
-```bash
-npm install -g surge
-```
-
-Then, from within your project folder:
-
-```bash
-npm run build
-surge public my-project.surge.sh
-```
+![Solucion](img/solucion.png)
