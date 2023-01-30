@@ -40,3 +40,7 @@ Producto: [TCL 43C725 43"](https://www.pccomponentes.com/tcl-43c725-43-qled-ultr
 El producto deberá de mostrarse de la siguiente forma:
 
 ![Solucion](img/solucion.png)
+
+# Enlace stackblitz repositorio online
+
+[Enlace](https://stackblitz.com/edit/taller-svelte-sysmana-2023-wmhhjg?file=README.md)
