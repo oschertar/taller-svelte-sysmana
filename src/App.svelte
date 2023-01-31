@@ -1,23 +1,38 @@
 <script>
-  import Discount from "./Discount.svelte";
-  import Label from "./Label.svelte";
+  import Card from "./Card.svelte";
 
-  const targetDiscount = document.querySelector("#priceBlock");
-  const targetLabel = document.querySelector(".item .fancybox");
+  const cardNodes = [...document.querySelectorAll(".card")];
 
-  new Discount({
-    target: targetDiscount,
-    anchor: targetDiscount.querySelector(":scope #precio-main"),
+  const DATA_TEACHERS = [];
+
+  cardNodes.forEach((cardData) => {
+    const social = [...cardData.querySelectorAll(".card-social a")];
+    const socialNetworks = [];
+    social.forEach((networkSoc) => {
+      socialNetworks.push(networkSoc);
+    });
+    DATA_TEACHERS.push({
+      name: cardData.querySelector(".title").innerText,
+      img: cardData.querySelector(".mdl-card__title").style.backgroundImage,
+      socialNetWorks: socialNetworks,
+    });
   });
-
-  new Label({
-    target: targetLabel,
-  });
-
-  console.log("this works!");
 </script>
 
-<div>This works!</div>
+<div>
+  {#each DATA_TEACHERS as data}
+    <Card {data} />
+  {/each}
+</div>
 
 <style>
+  div {
+    display: grid;
+    grid-template-columns: repeat(4, 200px);
+    gap: 45px;
+  }
+
+  :global(#secondary article) {
+    display: none;
+  }
 </style>
