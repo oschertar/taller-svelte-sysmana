@@ -1,23 +1,23 @@
 <script>
-  import Discount from "./Discount.svelte";
-  import Label from "./Label.svelte";
-
-  const targetDiscount = document.querySelector("#priceBlock");
-  const targetLabel = document.querySelector(".item .fancybox");
-
-  new Discount({
-    target: targetDiscount,
-    anchor: targetDiscount.querySelector(":scope #precio-main"),
-  });
-
-  new Label({
-    target: targetLabel,
-  });
+  export let dataProduct;
+  import Card from "./Card.svelte";
 
   console.log("this works!");
 </script>
 
-<div>This works!</div>
+<Card data={dataProduct} />
 
 <style>
+  :global(
+      #ciclp-app
+        > div
+        > div:nth-child(5)
+        .grid-row
+        .grid-col
+        .slider
+        li.slide
+        > *:not(.custom-card)
+    ) {
+    display: none;
+  }
 </style>
